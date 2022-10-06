@@ -1,0 +1,20 @@
+Assume that Movable is an interface, and that classes Alien and Vehicle implement Movable.
+
+Specify which of the statements below are valid. For invalid statements, explain why they are invalid.
+
+1. Movable m = new Movable();
+2. Movable ma = new Alien();
+3. Movable mv = new Vehicle();
+4. Alien a = new Movable();
+5. Object o = new Alien();
+6. Vehicle v  = new Alien();
+7. Vehicle v1 = (Vehicle)(new Alien());
+
+Solution:
+1. Invalid. Cannot instantiate an interface.
+2. Valid
+3. Valid
+4. Invalid. Cannot instantiate an interface.
+5. Valid. Upcasting.
+6. Invalid. Alien and Vehicle are not in inheritance relationship. Cannot assign sibling references to each other.
+7. Invalid. Alien and Vehicle are not in inheritance relationship. Cannot assign sibling references to each other, whether you cast or not.

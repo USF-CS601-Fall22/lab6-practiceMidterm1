@@ -1,0 +1,5 @@
+In this example, it is sufficient to make the variable stopGenerating volatile.
+It is one of the use cases for volatile (the pattern "status flag"), when
+the volatile variable changes once in stopGenerating = true; and on the right hand side we use a constant (not another variable or the previous version of the variable).
+Volatile will also ensure that both threads (main and randomNumGenThread) will
+see the most recent version of the variable (because reads/writes will be to the main memory).
