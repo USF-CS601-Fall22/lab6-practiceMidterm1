@@ -18,7 +18,9 @@ public class FileProcessor {
         // be closed automatically regardless of whether the exception occurs
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             while ((line = br.readLine()) != null) {
-                upperCaseWords.add(line.toUpperCase());
+                String[] words = line.split(" ");
+                for (String word: words)
+                    upperCaseWords.add(word.toUpperCase());
                 // line = br.readLine();// remove, otherwise you will skip every other line
                 // every time we call readLine, we go to the next line
             }
